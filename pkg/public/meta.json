@@ -1,0 +1,35 @@
+{
+    "owner_email": "adrien@gsell.me",
+    "publication_api_version": "1.0",
+    "name": "UGC-Paris Showtimes",
+    "description": "Schedule of the parisian UGC movie theaters",
+    "delivered_on": "every Wednesday",
+    "external_configuration": false,
+    "send_timezone_info": false,
+    "send_delivery_count": false,
+    "config": {
+        "fields": [
+            {
+                "type": "radio",
+                "name": "cinema",
+                "label": "Select your favorite cinema",
+                "options": [
+                    ["UGC Ciné Cité Paris 19", "W7509"],
+                    ["UGC Ciné Cité Bercy", "C0026"],
+                    ["UGC Ciné Cité La Défense", "B2619"],
+                    ["UGC Ciné Cité Les Halles", "C0159"],
+                    ["UGC Danton", "C0102"],
+                    ["UGC George V", "C0112"],
+                    ["UGC Gobelins", "C0150"],
+                    ["UGC Lyon Bastille", "C0146"],
+                    ["UGC Maillot", "C0175"],
+                    ["UGC Montparnasse", "C0103"],
+                    ["UGC Normandie", "C0010"],
+                    ["UGC Odéon", "C0104"],
+                    ["UGC Opéra", "C0126"],
+                    ["UGC Rotonde", "C0105"]
+                ]
+            }
+        ]
+    }
+}

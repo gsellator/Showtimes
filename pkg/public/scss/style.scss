@@ -1,0 +1,154 @@
+@import "variables";
+
+html {
+    width: 384px;
+}
+
+body {
+    width: 384px;
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.container {
+    max-height: 798px;
+    overflow: hidden;
+    margin-bottom: 2px;
+
+    header {
+        height: 52px;
+        background-image: url(../img/header.png);
+        background-position: center; 
+        background-repeat: no-repeat;
+        text-align: center;
+
+        .title {
+            padding-top: 8px;
+            font-size: 16px;
+            color: white;
+            text-shadow: 0.5px 1px 2px #333;
+            margin-top: 1px;
+        }
+
+        .subtitle {
+            margin-top: 2px;
+            color: white;
+            font-size: 14px;
+        }
+    }
+
+    section{
+        margin: 0 1px;
+
+        .row {
+            position: relative;
+            padding: 2px 4px 3px 4px;
+            border: solid black 1px;
+            border-top: none;
+
+            .poster {
+                width: 60px;
+                height: 70px;
+                float: left;
+                margin: 4px 4px 4px 6px;
+                display: none;
+            }
+
+            .preview, .new {
+                //                float: left;
+                //                color: white;
+                //                background-color: black;
+                //                text-align: center;
+                //                width: 60px;
+                //                margin: 2px -64px;
+                //                padding-top: 2px;
+                //                padding-bottom: 2px;
+                //                font-size: 13px;
+
+                color: white;
+                background-color: black;
+                text-align: center;
+                padding: 2px;
+                transform: rotate(270deg);
+                position: absolute;
+                display: none;
+            }
+
+            .title {
+                display: table;
+                width: 100%;
+                .row{
+                    display: table-row;
+
+                    .cell{
+                        display: table-cell;
+                    }
+                }
+
+                .title-a {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    width: 246px;
+
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .title-b {
+                    text-align: right;
+                    font-size: 14px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    img{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 18px;
+                    }
+
+                    span{
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            .diffusions {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                margin-top: 2px;
+
+                li {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 14px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    &:not(:last-child){margin-right: 4px;}
+
+                    .version{
+                        background-color: black;
+                        color: white;
+                        font-weight: bold;
+                        padding: 0 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.version,
+.ratings {
+    border-radius: 4px;
+}

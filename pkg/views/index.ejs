@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+    <%- include partials/head.ejs %>
+    <body style="zoom: 1;">
+
+        <div class="container">
+            <header>
+                <div class="title"><%= item.place.theater.name %></div>
+                <div class="subtitle">
+
+
+                    <%= printDate() %>
+
+                </div>
+            </header>
+
+            <section>
+                <% for(var i=0; i<item.movieShowtimes.length; i++) { %>
+                <section class="row">
+                    <!--                    <img class="poster" src="<%= item.movieShowtimes[i].onShow.movie.poster.href %>">-->
+
+                    <div class="title">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="title-a"><%= item.movieShowtimes[i].onShow.movie.title %></div>
+                            </div>
+                            <div class="cell">
+                                <div class="title-b">
+                                    <% if (item.movieShowtimes[i].onShow.movie.statistics.pressReviewCount > 0) { %>
+                                    <img class="back" src="/img/star.png"><span>
+                                    <%= item.movieShowtimes[i].onShow.movie.statistics.pressRating.toFixed(1) %></span>
+                                    <% } %>
+
+                                    <img class="back" src="/img/clock.png"><span>
+                                    <%= secondsToTime(item.movieShowtimes[i].onShow.movie.runtime) %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="diffusions">
+                        <li>
+                            <% if (item.movieShowtimes[i].preview == 'true') { %>
+                            <span class="version">PREMIERE</span></li><li>
+                        <% } %>
+
+                        <% if (item.movieShowtimes[i].releaseWeek == 'true') { %>
+                        <span class="version">NEW</span></li><li>
+                        <% } %>
+
+                        <% if (item.movieShowtimes[i].version.original == 'true') { %>
+                        <span class="version">VO</span></li><li>
+                        <% } %>
+
+                        <% for(var j=0; j<item.movieShowtimes[i].scr[0].t.length; j++) { %>
+                        <%= item.movieShowtimes[i].scr[0].t[j].$ %>
+                        <% if (j != item.movieShowtimes[i].scr[0].t.length - 1) { %></li><li><% } %>
+                        <% } %>
+                        </li>
+
+                    </ul>
+                </section>
+                <% } %>
+
+            </section>
+        </div>
+    </body>
+</html>

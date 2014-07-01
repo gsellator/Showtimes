@@ -1,0 +1,147 @@
+/* Variables */
+
+html {
+  width: 384px;
+}
+
+body {
+  width: 384px;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.container {
+  max-height: 798px;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.container header {
+  height: 52px;
+  background-image: url(../img/header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.container header .title {
+  padding-top: 8px;
+  font-size: 16px;
+  color: white;
+  text-shadow: 0.5px 1px 2px #333;
+  margin-top: 1px;
+}
+
+.container header .subtitle {
+  margin-top: 2px;
+  color: white;
+  font-size: 14px;
+}
+
+.container section {
+  margin: 0 1px;
+}
+
+.container section .row {
+  position: relative;
+  padding: 2px 4px 3px 4px;
+  border: solid black 1px;
+  border-top: none;
+}
+
+.container section .row .poster {
+  width: 60px;
+  height: 70px;
+  float: left;
+  margin: 4px 4px 4px 6px;
+  display: none;
+}
+
+.container section .row .preview,
+.container section .row .new {
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 2px;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: absolute;
+  display: none;
+}
+
+.container section .row .title {
+  display: table;
+  width: 100%;
+}
+
+.container section .row .title .row {
+  display: table-row;
+}
+
+.container section .row .title .row .cell {
+  display: table-cell;
+}
+
+.container section .row .title .title-a {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: bold;
+  width: 246px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container section .row .title .title-b {
+  text-align: right;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container section .row .title .title-b img {
+  display: inline-block;
+  vertical-align: top;
+  width: 18px;
+}
+
+.container section .row .title .title-b span {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.container section .row .diffusions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.container section .row .diffusions li {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container section .row .diffusions li:not(:last-child) {
+  margin-right: 4px;
+}
+
+.container section .row .diffusions li .version {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 0 2px;
+}
+
+.version,
+.ratings {
+  border-radius: 4px;
+}

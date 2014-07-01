@@ -1,0 +1,11 @@
+{
+    "name": "Showtimes",
+    "version": "0.0.1",
+    "authors": [
+        "@Gsellator"
+    ],
+    "description": "Weekly french cinemas showtimes delivery for BERG Cloud's Little Printer",
+    "license": "",
+    "dependencies": {
+    }
+}
