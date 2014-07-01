@@ -29,12 +29,14 @@ body {
             color: white;
             text-shadow: 0.5px 1px 2px #333;
             margin-top: 1px;
+            font-weight: bold;
         }
 
         .subtitle {
             margin-top: 2px;
             color: white;
             font-size: 14px;
+            font-weight: bold;
         }
     }
 
@@ -146,9 +148,3 @@ body {
     }
 }
 
-
-
-.version,
-.ratings {
-    border-radius: 4px;
-}
