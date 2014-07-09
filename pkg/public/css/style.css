@@ -31,12 +31,14 @@ body {
   color: white;
   text-shadow: 0.5px 1px 2px #333;
   margin-top: 1px;
+  font-weight: bold;
 }
 
 .container header .subtitle {
   margin-top: 2px;
   color: white;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .container section {
@@ -139,9 +141,4 @@ body {
   color: white;
   font-weight: bold;
   padding: 0 2px;
-}
-
-.version,
-.ratings {
-  border-radius: 4px;
 }

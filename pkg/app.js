@@ -42,45 +42,33 @@ app.get('/', function(req, res) {
 });
 
 app.get('/edition/', function(req, res) {
-    //    var today = new Date(); 
-    console.log('test');
+    console.log(req.query);
 
-    if (req.query.cinema){
-        allocine.api('showtimelist', {theaters: req.query.cinema}, function(error, result) {
-            if(error) { console.log('Error : '+ error); return; }
-            res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-            res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
-        });
+    var today = new Date(); 
+    if (today.getDay() != 4) {
+        console.log('204');
+        res.status(204);
+        res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+        res.end();
     } else {
-        allocine.api('showtimelist', {theaters: 'C0159'}, function(error, result) {
-            if(error) { console.log('Error : '+ error); return; }
-            res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-            res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
-        });
+        if (req.query.cinema){
+            allocine.api('showtimelist', {theaters: req.query.cinema}, function(error, result) {
+                if(error) { console.log('Error : '+ error); return; }
+                res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+                res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
+            });
+        } else {
+            allocine.api('showtimelist', {theaters: 'C0159'}, function(error, result) {
+                if(error) { console.log('Error : '+ error); return; }
+                res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+                res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
+            });
+        }
     }
-
-    //    if (today.getDay != 3) {
-    //        res.status(204);
-    //        res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    //        res.end();
-    //    } else {
-    //    allocine.api('showtimelist', {theaters: 'C0150'}, function(error, result) {
-    //        if(error) { console.log('Error : '+ error); return; }
-    //        res.setHeader('Content-Type', 'text/html; charset=ISO-8859-1');
-    //        res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
-    //    });
-    //    }
 });
 
 app.get('/sample/', function(req, res) {
     console.log(req.query);
-
-    //    allocine.api('showtimelist', {theaters: 'C0150'}, function(error, result) {
-    //        if(error) { console.log('Error : '+ error); return; }
-    //        res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    //        res.render('index.ejs', {item: result.feed.theaterShowtimes[0]});
-    //    });
-
     allocine.api('showtimelist', {theaters: 'C0159'}, function(error, result) {
         if(error) { console.log('Error : '+ error); return; }
         res.setHeader('Content-Type', 'text/html; charset=UTF-8');
