@@ -45,7 +45,7 @@ app.get('/edition/', function(req, res) {
     console.log(req.query);
 
     var today = new Date(); 
-    if (today.getDay() != 4) {
+    if (today.getDay() != 3) {
         console.log('204');
         res.status(204);
         res.setHeader('Content-Type', 'text/html; charset=UTF-8');
